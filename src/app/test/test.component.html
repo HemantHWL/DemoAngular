@@ -1,0 +1,52 @@
+<p  [class]="strColorClass">{{appName}}</p>
+<p [class.strColor]="isClass">{{appName}}</p>
+<p [style.color]="myColor">{{userName}}</p>
+<input type="text" [(ngModel)]="userName">
+<button [disabled]="isShow" (click)="showData($event)">Click</button>
+<div *ngIf="isShow">
+<button on-click="showData($event)">Click me</button>
+</div>
+<p>ngIfElse example!</p> 
+<div *ngIf="isLoggedIn; else isLoggedOff">Hi</div>
+<ng-template #isLoggedOff>
+    <div>Byy</div>
+
+</ng-template>
+<p>ngFor example!</p> 
+<ul>
+    <li *ngFor="let l of itemsList">
+        {{l}}
+    </li>
+</ul>
+<p>ngFor trackby!</p> 
+<ul> 
+    <li *ngFor="let std of studentArr; trackBy: trackByData">
+       {{std.name}} 
+    </li>
+ </ul>
+ 
+
+ <p>ngSwitch example!</p>
+ <ul [ngSwitch]="userName">
+<li *ngSwitchCase="'Hemant'">
+    I Love You Preeti
+</li>
+<li *ngSwitchCase="'Preeti'">
+I Love you Hemant
+</li>
+<li *ngSwitchDefault>
+    They love each other
+</li>
+ </ul>
+
+ <p>ngStyle example!</p>
+ <p [ngStyle]="{'color':'yellow'}">Jai Shri Krishna</p>
+
+ <p>ngClass example!</p>
+
+ <ul>
+     <li *ngFor="let u of user" [ngClass]="{'strColor':u.name==='Hemant'}">{{u.name}}</li>
+ </ul>
+
+ <p>Custome Directive example!</p>
+ <p appCustomeStyle>Jai Shri Krishna</p>
